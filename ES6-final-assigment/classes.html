@@ -1,0 +1,128 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>ES6 Assignment</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
+    
+  <!-- <link rel="stylesheet" href="../css/style.css"/> -->
+  <style>
+    .animated-button {
+      position: relative;
+      display: inline-block;
+      padding: 10px 20px;
+      font-size: 16px;
+      font-weight: bold;
+      text-transform: uppercase;
+      color: white;
+      background-color: #337ab7;
+      border: none;
+      outline: none;
+      cursor: pointer;
+      overflow: hidden;
+      z-index: 1;
+    }
+    
+    .animated-button::before {
+      content: "";
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      width: 0;
+      height: 0;
+      background-color: rgba(255, 255, 255, 0.5);
+      border-radius: 50%;
+      opacity: 0;
+      transform: translate(-50%, -50%);
+      transition: width 0.3s ease-out, height 0.3s ease-out, opacity 0.3s ease-out;
+      z-index: -1;
+    }
+    
+    .animated-button:hover::before {
+      width: 100%;
+      height: 100%;
+      opacity: 1;
+    }
+    
+    .animated-button::after {
+      content: "";
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(255, 255, 255, 0.3);
+      transform: translate(-50%, -50%) scale(0);
+      transition: transform 0.3s ease-out;
+      z-index: -1;
+    }
+    
+    .animated-button:hover::after {
+      transform: translate(-50%, -50%) scale(1);
+    }
+  </style>
+
+</head>
+
+
+  <body style="background-image: url(./images/black-370118_1280.png);background-size: cover;background-repeat: no-repeat;">
+  <a style="text-decoration: none;" href="./index.html" class="animated-button">go to home page</a>
+  <section class="qus-list">
+    <div class="container">
+      <div class="heading">
+        <h1 style="color: red;">CLASSES</h1>
+      </div>
+      <ol>
+        <div class="d-grid gap-2">
+          <button class="btn btn-light" type="button" onclick="createFriends()">
+            <li class="ques">.2. Create a person class, instantiate two friends, and print their names.</li>
+            <h2 id="friendsNames"></h2>
+
+          </button>
+
+          <button class="btn btn-light" type="button"  onclick="introducePerson()">
+            <li class="ques">Create a Person class with a name and an age, and introduce a person.
+
+            </li>
+            <h2 id="personIntroduction"></h2>
+
+          </button>
+
+          <button class="btn btn-light" type="button" onclick="calculateRectangle()">
+            <li class="ques">Create a Rectangle class with width and height, and calculate its area and perimeter.              
+                </li>
+                <h2 id="rectangleResult"></h2>
+          </button>
+
+          <button class="btn btn-light" type="button" onclick="calculateCircle()">
+            <li class="ques"><b>Calculator:</b>
+              Create a Circle class with a radius, and calculate its diameter, circumference, and area.</li>
+              <h2 id="circleResult"></h2>
+          </button>
+
+          <button class="btn btn-light" type="button" onclick="introduceStudent()">
+            <li class="ques">6. Create a Student class that inherits from the Person class and includes a course.</li>
+            <h2 id="studentIntroduction"></h2>
+          </button>
+
+          <button class="btn btn-light" type="button" onclick="calculateSquare()">
+            <li class="ques">7. Create a Square class that inherits from the Rectangle class and uses side length instead of width and
+              height.</li>
+              <h2 id="squareResult"></h2>
+
+          </button>
+        </div>
+      </ol>
+    </div></section>
+       
+      
+  <script src="./classes.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4"
+    crossorigin="anonymous"></script>
+</body>
+
+</html>

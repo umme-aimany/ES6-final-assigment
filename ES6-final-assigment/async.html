@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>JavaScript Code</title>
+  <style>
+    .animated-button {
+      position: relative;
+      display: inline-block;
+      padding: 10px 20px;
+      font-size: 16px;
+      font-weight: bold;
+      text-transform: uppercase;
+      color: white;
+      background-color: #337ab7;
+      border: none;
+      outline: none;
+      cursor: pointer;
+      overflow: hidden;
+      z-index: 1;
+    }
+    
+    .animated-button::before {
+      content: "";
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      width: 0;
+      height: 0;
+      background-color: rgba(255, 255, 255, 0.5);
+      border-radius: 50%;
+      opacity: 0;
+      transform: translate(-50%, -50%);
+      transition: width 0.3s ease-out, height 0.3s ease-out, opacity 0.3s ease-out;
+      z-index: -1;
+    }
+    
+    .animated-button:hover::before {
+      width: 100%;
+      height: 100%;
+      opacity: 1;
+    }
+    
+    .animated-button::after {
+      content: "";
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(255, 255, 255, 0.3);
+      transform: translate(-50%, -50%) scale(0);
+      transition: transform 0.3s ease-out;
+      z-index: -1;
+    }
+    
+    .animated-button:hover::after {
+      transform: translate(-50%, -50%) scale(1);
+    }
+  </style>
+</head>
+
+<body style="background-image: url(./images/black-370118_1280.png);background-size: cover;background-repeat: no-repeat;">
+  <a style="text-decoration: none;" href="./index.html" class="animated-button">go to home page</a>
+  <div style="color: red;">
+    <h1 style="color: red;">
+    ASYNC/AWAIT
+    </h1>
+  </div>
+  <div style="color: white;text-align: center;">
+  <p>1. Create a function called `delayedGreeting` that takes a `name` parameter. The function should use `setTimeout` to delay the greeting message by 2 seconds. Use `async/await` to make the function asynchronous:</p>
+  <button class="btn btn-light" id="greetingButton">Click here</button>
+  <p id="greetingOutput"></p>
+
+  <p>2. Create a function called `fetchData` that simulates an asynchronous API call. The function should return a promise that resolves with a data object after 3 seconds. Use `async/await` to make the function asynchronous:</p>
+  <button class="btn btn-light" id="fetchDataButton">Click here</button>
+  <p id="fetchDataOutput"></p>
+
+  <p>3. Create a function called `fetchUsers` that fetches a list of users from an API. The function should return a promise that resolves with the list of users after 4 seconds. Use `async/await` to make the function asynchronous:</p>
+  <button class="btn btn-light" id="fetchUsersButton">Click here</button>
+  <p id="fetchUsersOutput"></p>
+
+  <p>4. Create a function called `fetchData` that fetches data from an API based on a given `id`. The function should return a promise that resolves with the fetched data after 5 seconds. Use `async/await` to make the function asynchronous:</p>
+  <button class="btn btn-light" id="fetchDataByIdButton">Click here</button>
+  <p id="fetchDataByIdOutput"></p>
+
+  <p>5. Create a function called `counter` that increments a global counter value using `setTimeout` and `async/await`. The function should output the counter value and the function argument:</p>
+  <button class="btn btn-light" id="counterButton">Click here</button>
+</div>
+  <p id="counterOutput"></p>
+  <script src="./async.js"></script>
+</body>
+</html>
